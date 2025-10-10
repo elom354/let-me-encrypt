@@ -1,0 +1,53 @@
+{
+  "name": "let-me-encrypt-ts",
+  "version": "1.0.0",
+  "description": "AES-CBC encryption/decryption utility written in TypeScript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/main.ts",
+    "start": "node dist/main.js",
+    "generate:keys": "ts-node src/utils/generateKeys.ts",
+    "format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
+    "lint": "prettier --check \"src/**/*.{ts,js,json,md}\"",
+    "clean": "rimraf dist",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run clean && npm run build && npm run lint",
+    "test": "echo \"No tests defined yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elom354/let-me-encrypt-ts.git"
+  },
+  "author": "Azert Sicaps",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elom354/let-me-encrypt-ts/issues"
+  },
+  "homepage": "https://github.com/elom354/let-me-encrypt-ts#readme",
+  "keywords": [
+    "aes",
+    "crypto",
+    "typescript",
+    "cbc",
+    "encrypt",
+    "decrypt",
+    "security",
+    "utility"
+  ],
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "pbkdf2": "^3.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
